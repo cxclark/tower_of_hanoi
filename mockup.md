@@ -11,6 +11,9 @@ Tower of Hanoi is a mathematical puzzle game consisting of three rods and a numb
 ## Wire Frames
 
 ![hanoi1](./mockup_images/hanoi1.png)
+![hanoi2](./mockup_images/hanoi2.png)
+![hanoi3](./mockup_images/hanoi3.png)
+![hanoi4](./mockup_images/hanoi4.png)
 
 
 ## User Stories
