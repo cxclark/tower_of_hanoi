@@ -1,0 +1,35 @@
+body {
+    width: 600px;
+    border: 3px solid red;
+}
+div {
+    padding: 20px;
+    border: 3px solid gray;
+}
+.towers {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    border: 3px solid blue;
+}
+.tower {
+    display: flex;
+    justify-content: center;
+    margin: 10px 30px 10px 30px;
+    min-width: 50px; 
+    min-height: 100px;
+    border: 3px solid orange;
+    border-bottom: 3px solid brown; 
+
+    /* border-bottom: 3px rgb(160,82,45);  */
+    /* Why doesn't this work ^^^^? */
+
+    /* Source for code for vertical lines: */
+    /* https://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div */
+    background: linear-gradient(#A0522D, #A0522D) no-repeat center/2px 100%;
+}
+
+#message {
+    display: flex;
+    justify-content: center;
+}

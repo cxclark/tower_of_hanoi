@@ -8,14 +8,25 @@
     <script defer src="./script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<header>Tower of Hanoi</header>
 <body>
-  <div id="message"></div>
-  <div id="towers">
-      <div class="tower"></div>
-      <div class="tower"></div>
-      <div class="tower"></div>
+  <div class="board">
+    <!-- This is the message that will be populated at the top of the game  -->
+    <div id="message">This will be the message displayed.</div>
+    
+    <!-- The game game will have three towers -->
+    <div class ="towers">
+      <div id="towerA" class="tower"><v-r></v-r></div>
+      <div id="towerB" class="tower"></div>
+      <div id="towerC" class="tower"></div>
     </div>  
+    
+    <!-- Reset button resets the game -->
+    <button class="reset">Reset</div>
+  </div>
+  
+
+
 </body>
 
 </html>
