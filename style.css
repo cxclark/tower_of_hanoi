@@ -4,6 +4,7 @@
 /* Use percentages for the discs */
 /* the more divs you have, the more flexibility you ahve with styling, use divs */
 /* think about adding box shadows, or add gradient, add background image */
+
 body {
     width: 400vw;
     font-family: "Gothic A1";
@@ -49,9 +50,12 @@ div {
     border-radius: 10px;
 }
 .disc {
-    height: 10px;
-    border-radius: 10px;
-    /* align-self: flex-end; */
+    height: 5px;
+    border-radius: 20px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #disc1 {
     width: 10px;
@@ -73,3 +77,21 @@ div {
     width: 50px;
     background-color: #C79098;
 }
+#disc6 {
+    width: 60px;
+    background-color: #C79098;
+}
+#disc7 {
+    width: 70px;
+    background-color: #C79098;
+}
+#disc8 {
+    width: 80px;
+    background-color: #C79098;
+}
+
+
+
+
+
+

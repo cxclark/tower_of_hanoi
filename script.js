@@ -35,7 +35,7 @@ console.log('tower_B: ', tower_B);
 console.log('tower_C: ', tower_C);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Instantiate the three towers by grabbing the corresponding IDs in the DOM
-const towers = document.querySelector('.towers')
+// const towers = document.querySelector('.towers')
 const towerA = document.querySelector('#towerA');
 const towerB = document.querySelector('#towerB');
 const towerC = document.querySelector('#towerC');
@@ -46,6 +46,8 @@ let discSelected = false;
 
 // Create discs using DOM elements
 function createDiscs() {
+    let dropdown = document.getElementById('dropdown');
+    let numDiscs = parseInt(dropdown.options[dropdown.selectedIndex].value);
     for (let i = 1; i < numDiscs + 1; i++) {
         let discDiv = document.createElement('div');
         discDiv.id = 'disc' + i;
