@@ -12,6 +12,29 @@ for (let i = 1; i < numDiscs + 1; i++) {
 console.log('tower_A: ', tower_A);
 console.log('tower_B: ', tower_B);
 console.log('tower_C: ', tower_C);
+// Solve Hanoi
+// Moving one case is the base case
+// Moving more than one case is the recursive case 
+// Step 1: Move top (N-1) disks from Beg to Temp tower.
+// Step 2: Move 1 disk from Beg to End tower.
+// Step 3: Move top (N-1) disks from Temp to End tower.
+
+function solve(begin, end, temp, n) {
+    // Moving one disc is the base case
+    if (n === 1) {
+        end.push(begin.pop());
+    // Moving more than one disc is the recursive case
+    } else {
+        solve(begin, temp, end, n-1);
+        solve(begin, end, temp, 1);
+        solve(temp, end, begin, n-1);
+    }
+}
+
+solve(tower_A, tower_C, tower_B, numDiscs);
+console.log('tower_A: ', tower_A);
+console.log('tower_B: ', tower_B);
+console.log('tower_C: ', tower_C);
 
 // Instantiate the three towers by grabbing the corresponding IDs in the DOM
 const towerA = document.querySelector('#towerA');
@@ -42,26 +65,3 @@ createDiscs();
 
 // Create a function to check if the game as been won
 
-// Step 1: Move top (N-1) disks from Beg to Temp tower.
-// Step 2: Move 1 disk from Beg to End tower.
-// Step 3: Move top (N-1) disks from Temp to End tower.
-
-// Moving one case is the base case
-// Moving more than one case is the recursive case 
-
-function solve(begin, end, temp, n) {
-    // Moving one disc is the base case
-    if (n === 1) {
-        end.push(begin.pop());
-    // Moving more than one disc is the recursive case
-    } else {
-        solve(begin, temp, end, n-1);
-        solve(begin, end, temp, 1);
-        solve(temp, end, begin, n-1);
-    }
-}
-
-solve(tower_A, tower_C, tower_B, numDiscs);
-console.log('tower_A: ', tower_A);
-console.log('tower_B: ', tower_B);
-console.log('tower_C: ', tower_C);
