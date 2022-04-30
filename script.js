@@ -2,15 +2,33 @@
 // Instantiate 3 (to begin) disks on the first tower, each with different size values
 // This input is where we could later adjust # of discs from user input
 let numDiscs = 5;
-towerA = []
-towerB = []
-towerC = []
+
+let tower_A = []
+let tower_B = []
+let tower_C = []
 for (let i = 1; i < numDiscs + 1; i++) {
-    towerA.push(i);
+    tower_A.push(i);
 }
-console.log('towerA: ', towerA);
-console.log('towerB: ', towerB);
-console.log('towerC: ', towerC);
+console.log('tower_A: ', tower_A);
+console.log('tower_B: ', tower_B);
+console.log('tower_C: ', tower_C);
+
+// Instantiate the three towers by grabbing the corresponding IDs in the DOM
+const towerA = document.querySelector('#towerA');
+const towerB = document.querySelector('#towerB');
+const towerC = document.querySelector('#towerC');
+
+// Create disc using DOM elements
+function createDiscs() {
+    for (let i = 1; i < numDiscs + 1; i++) {
+        let discDiv = document.createElement('div');
+        discDiv.id = 'disc' + i;
+        discDiv.classList.add('disc');
+        towerA.appendChild(discDiv);
+    }
+}
+createDiscs();
+
 
 // Instantiate a variable which holds the value of the top of the stack on a tower
 
@@ -24,9 +42,9 @@ console.log('towerC: ', towerC);
 
 // Create a function to check if the game as been won
 
-// Step 1: Move top (N-1) disks from Beg to Aux tower.
+// Step 1: Move top (N-1) disks from Beg to Temp tower.
 // Step 2: Move 1 disk from Beg to End tower.
-// Step 3: Move top (N-1) disks from Aux to End tower.
+// Step 3: Move top (N-1) disks from Temp to End tower.
 
 // Moving one case is the base case
 // Moving more than one case is the recursive case 
@@ -43,7 +61,7 @@ function solve(begin, end, temp, n) {
     }
 }
 
-solve(towerA, towerC, towerB, numDiscs);
-console.log('towerA: ', towerA);
-console.log('towerB: ', towerB);
-console.log('towerC: ', towerC);
+solve(tower_A, tower_C, tower_B, numDiscs);
+console.log('tower_A: ', tower_A);
+console.log('tower_B: ', tower_B);
+console.log('tower_C: ', tower_C);

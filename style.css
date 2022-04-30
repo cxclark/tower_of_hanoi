@@ -21,6 +21,7 @@ div {
     min-height: 100px;
     border: 3px solid orange;
     border-bottom: 3px solid brown; 
+    flex-direction: column-reverse;
 
     /* border-bottom: 3px rgb(160,82,45);  */
     /* Why doesn't this work ^^^^? */
@@ -29,8 +30,30 @@ div {
     /* https://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div */
     background: linear-gradient(#A0522D, #A0522D) no-repeat center/2px 100%;
 }
-
 #message {
     display: flex;
     justify-content: center;
+}
+.disc {
+    height: 10px;
+}
+#disc1 {
+    width = 100px;
+    background-color: #BEE7A5;
+}
+#disc2 {
+    width = 80px;
+    background-color: #FEC47F;
+}
+#disc3 {
+    width = 60px;
+    background-color: #B19CD9;
+}
+#disc4 {
+    width = 40px;
+    background-color: #AEC6CF;
+}
+#disc5 {
+    width = 20px;
+    background-color: #C79098;
 }
