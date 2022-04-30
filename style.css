@@ -34,27 +34,32 @@ div {
     display: flex;
     justify-content: center;
 }
+.reset {
+    text-align: center;
+    margin: 5px auto;
+    border-radius: 10px;
+}
 .disc {
     height: 10px;
     border-radius: 10px;
 }
 #disc1 {
-    width = 100px;
+    width: 10px;
     background-color: #BEE7A5;
 }
 #disc2 {
-    width = 80px;
+    width: 20px;
     background-color: #FEC47F;
 }
 #disc3 {
-    width = 60px;
+    width: 30px;
     background-color: #B19CD9;
 }
 #disc4 {
-    width = 40px;
+    width: 40px;
     background-color: #AEC6CF;
 }
 #disc5 {
-    width = 20px;
+    width: 50px;
     background-color: #C79098;
 }
