@@ -1,7 +1,7 @@
 // Algorithm
 // Instantiate a variable for the number of discs
 // This input is where we could later adjust # of discs from user input
-let numDiscs = 5;
+let numDiscs = 3;
 // Instantiate three towers as stacks
 let tower_A = []
 let tower_B = []
@@ -76,32 +76,25 @@ let gameplay = function(){
     } else {
         // If you click on the same tower twice, de-select the disc
         if (discSelected === this.firstElementChild) {
-            console.log('this if same tower: ', this);
             this.firstElementChild.style.borderWidth = '3px';
             discSelected = false;
         
         // If tower is empty, move the disc to the empty tower
         } else if (this.childElementCount === 0) {
-            console.log('this if empty tower: ', this);
             discSelected.style.borderWidth = '3px';
             this.prepend(discSelected);
             discSelected = false;
             
         // If selected disc is smaller than the target disc, move the disc
         } else if (discSelected.offsetWidth < this.firstElementChild.offsetWidth) {
-            console.log('this if selected disc smaller than this\s disc: ', this);
-            console.log(`discSelected.offsetWidth: ${discSelected.offsetWidth}`)
-            console.log(`this.firstElementChild.offsetWidth: ${this.firstElementChild.offsetWidth}`)
             discSelected.style.borderWidth = '3px';
             this.prepend(discSelected);
             discSelected = false;
-
-        // box-border....
+            // Check if the game has been won
+            checkWin();
 
         // If selected disc is larger than the target disc, invalid move
         } else if (discSelected.offsetWidth > this.firstElementChild.offsetWidth) {
-            console.log(`discSelected.offsetWidth: ${discSelected.offsetWidth}`)
-            console.log(`firstElementChild.offsetWidth: ${this.firstElementChild.offsetWidth}`)
             console.log('Invalid Move.')
         }
     }
@@ -111,15 +104,30 @@ towerA.addEventListener('click', gameplay);
 towerB.addEventListener('click', gameplay);
 towerC.addEventListener('click', gameplay);
 
-    // On first click, if the tower has a disc(s), the highlight the smallest disk
-        // If there are no discs on that tower, do nothing
-    // On second click, check to see if the move is legal
-        // If the move is invalid, show a message on the screen
-        // If the move is valid, move the disc
+// Create a function to check if the game as been won
+function checkWin() {
+    if (towerC.childElementCount === numDiscs) {
+        console.log('You won!')
+    }
+}
 
+// Create an event listener for the reset button that resets the game
+document.querySelector('.reset').addEventListener('click', () => {
+    // Clear the existing discs from the board
+    document.querySelectorAll('.disc').forEach(disc => disc.remove());
+    createDiscs();
+});
 
+// Create a function that resets the game
+function newGame() {
+    document.querySelectorAll('.disc').forEach(disc => disc.remove());
+    createDiscs();
+}
 
-
+// 4/30: Finalize logic for the game
+// 5/1: Fine-tune the styling (spacing, colors, font, centering, input)
+// 5/3: Complete the self-solve functionality
+// Time-Allowing: Add move-counter
 
 
 ////////// METHOD B
@@ -155,12 +163,3 @@ towerC.addEventListener('click', gameplay);
 // // towerA.addEventListener('click', (e) => {
 // //     e.stopPropagation();
 // // })
-
-
-// Create a function to check if the game as been won
-
-
-// 4/30: Finalize logic for the game
-// 5/1: Fine-tune the styling (spacing, colors, font, centering, input)
-// 5/3: Complete the self-solve functionality
-// Time-Allowing: Add move-counter

@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href = "https://fonts.googleapis.com/css2?family=Gothic+A1">
 </head>
-<header>Tower of Hanoi</header>
+<header>
+  Tower of Hanoi
+</header>
 <body>
   <div class="board">
     <!-- This is the message that will be populated at the top of the game  -->
@@ -25,6 +27,20 @@
     
     <!-- Reset button resets the game -->
     <button class="reset">Reset</button>
+  </div>
+
+  <div class="difficulty">
+    <p>Difficulty:
+      <select id="dropdown" onchange="newGame()">
+          <option value="3">3</option>
+          <!-- Set the deafult dropdown value to 4 -->
+          <option value="4"selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+      </select>
+    </p>
   </div>
   
 
