@@ -4,10 +4,14 @@
 /* Use percentages for the discs */
 /* the more divs you have, the more flexibility you ahve with styling, use divs */
 /* think about adding box shadows, or add gradient, add background image */
-
+.name {
+    display: flex;
+    justify-content: center;
+}
 body {
-    width: 400vw;
-    font-family: "Gothic A1";
+    width: 600px;
+    /* font-family: "Gothic A1"; */
+    font-family: "DM Sans";
     border: 2px solid red;
 }
 div {
@@ -30,24 +34,34 @@ div {
     min-width: 50px; 
     min-height: 100px;
     border: 2px solid orange;
-    border-bottom: 5px solid brown; 
+    border-bottom: 5px solid brown;
     padding-bottom: 0px;
+    border-radius: 2px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     /* border-bottom: 3px rgb(160,82,45);  */
     /* Why doesn't this work ^^^^? */
 
     /* Source for code for vertical lines: */
     /* https://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div */
-    background: linear-gradient(#A0522D, #A0522D) no-repeat center/5px 100%;
+    background: linear-gradient(#654321, #654321) no-repeat center/5px 100%;
+    /* background: linear-gradient(#A0522D, #A0522D) no-repeat center/5px 100%; */
 }
 #message {
     display: flex;
     justify-content: center;
 }
-.reset {
+.reset-section {
+    display: flex;
+    justify-content: center;
+}
+.reset-button {
     text-align: center;
     margin: 5px auto;
     border-radius: 10px;
+    font-family: "DM Sans";
+    font-size: medium;
 }
 .disc {
     height: 5px;
