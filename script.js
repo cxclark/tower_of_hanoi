@@ -1,20 +1,17 @@
 
-// Create a function to display a message
-let subheader = 'Move all the discs from left to right one at a time. A disc cannot be placed on top of a smaller disc. Good luck!'
+// Instantiate a variable to hold instructions message
+let subheader = 'Move all the discs from left to right one at a time. A disc cannot be placed on top of a smaller disc.'
+// Grab the subheader element and set the innerHTML to the subheader variable
 document.querySelector('.subheader').innerHTML = subheader.toUpperCase();
 
-
-
 // Instantiate the three towers by grabbing the corresponding IDs in the DOM
-// const towers = document.querySelector('.towers')
 const towerA = document.querySelector('#towerA');
 const towerB = document.querySelector('#towerB');
 const towerC = document.querySelector('#towerC');
 
 // Instantate a variable for the number of discs
-let numDiscs = 3;
-// Instante a variable to track when there is a click
-// This will help with the logic of moving pieces
+let numDiscs = parseInt(dropdown.options[dropdown.selectedIndex].value);
+// Instante a variable to track when there is a disc selected
 let discSelected = false;
 // Create a counter to track the # of moves
 let moveCount = 0;
@@ -22,16 +19,14 @@ let moveCount = 0;
 // Create discs using DOM elements
 function createDiscs() {
     let dropdown = document.getElementById('dropdown');
-    numDiscs = parseInt(dropdown.options[dropdown.selectedIndex].value);
+    numDiscs = parseInt(dropdown.options[dropdown.selectedIndex].value); // Do I need this second call-out???
     for (let i = 1; i < numDiscs + 1; i++) {
         let discDiv = document.createElement('div');
         discDiv.id = 'disc' + i;
         discDiv.innerText = `${i}`
         discDiv.classList.add('disc');
         towerA.appendChild(discDiv);
-        console.log(`discDiv${i}'s offsetWidth:${discDiv.offsetWidth}`);
         displayMessage('');
-        // displayMessage('Move all the discs from left to right one at a time. A disc cannot be placed on top of a smaller disc. Good luck!');
     }
 }
 createDiscs();
@@ -126,15 +121,119 @@ function displayMessage(message) {
 function minMoves() {
     let numDiscs = parseInt(dropdown.options[dropdown.selectedIndex].value);
     let minMoves = document.querySelector('.minimum');
-    minMoves.innerHTML = `${2**numDiscs - 1} moves to win`;
+    minMoves.innerHTML = `${2**numDiscs - 1} moves to win`.toUpperCase();
 }
 
 // 4/30: Finalize logic for the game
 // 5/1: Fine-tune the styling (spacing, colors, font, centering, input)
 // 5/3: Complete the self-solve functionality
-// Time-Allowing: Add move-counter
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Create an event listener for the solve button that solves the game
+document.querySelector('.solve').addEventListener('click', () => {
+    // Clear the existing discs from teh board
+    document.querySelectorAll('.disc').forEach(disc => disc.remove());
+    moveCount = 0;
+    // Call the solve function to solve the puzzle 
+    console.log(towerA.firstElementChild); // This is null, how do I pull out the disc value without a click?
+    console.log(towerB);
+    console.log(towerC);
+    console.log(numDiscs);
+    test(towerA, towerB);
+    // solve(towerA, towerC, towerB, numDiscs);
+})
+
+// function solve(begin, end, temp, n) {
+//     createDiscs();
+//     if (n === 1) {
+//         discToMove = begin.firstElementChild;
+//         end.prepend.discToMove;
+//     } else {
+//         solve(begin, temp, end, n-1);
+//         solve(begin, end, temp, 1);
+//         solve(temp, end, begin, n-1);
+//     }
+// }
+
+function test(begin, end) {
+    discToMove = begin.firstElementChild;
+    end.prepend.discToMove;
+}
 
 
+// // Algorithm
+// // Instantiate a variable for the number of discs
+// // This input is where we could later adjust # of discs from user input
+// let numDiscs = 3;
+// // Instantiate three towers as stacks
+// let tower_A = []
+// let tower_B = []
+// let tower_C = []
+// for (let i = 1; i < numDiscs + 1; i++) {
+//     tower_A.push(i);
+// }
+// console.log('tower_A: ', tower_A);
+// console.log('tower_B: ', tower_B);
+// console.log('tower_C: ', tower_C);
+// Solve Hanoi
+// Moving one case is the base case
+// Moving more than one case is the recursive case 
+// Step 1: Move top (N-1) discs from Beg to Temp tower.
+// Step 2: Move 1 disc from Beg to End tower (in the case of 3 discs, this is the bottom disc)
+// Step 3: Move top (N-1) discs from Temp to End tower (in the case of 3 disks, this is the top 2 discs)
+// function solve(begin, end, temp, n) {
+//     // Moving one disc is the base case
+//     if (n === 1) {
+//         end.push(begin.pop());
+//     // Moving more than one disc is the recursive case
+//     } else {
+//         solve(begin, temp, end, n-1);
+//         solve(begin, end, temp, 1);
+//         solve(temp, end, begin, n-1);
+//     }
+// }
+// solve(tower_A, tower_C, tower_B, numDiscs);
+// console.log('tower_A: ', tower_A);
+// console.log('tower_B: ', tower_B);
+// console.log('tower_C: ', tower_C);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// // Algorithm
+// // Instantiate a variable for the number of discs
+// // This input is where we could later adjust # of discs from user input
+// let numDiscs = 3;
+// // Instantiate three towers as stacks
+// let tower_A = []
+// let tower_B = []
+// let tower_C = []
+// for (let i = 1; i < numDiscs + 1; i++) {
+//     tower_A.push(i);
+// }
+// console.log('tower_A: ', tower_A);
+// console.log('tower_B: ', tower_B);
+// console.log('tower_C: ', tower_C);
+// // Solve Hanoi
+// // Moving one case is the base case
+// // Moving more than one case is the recursive case 
+// // Step 1: Move top (N-1) discs from Beg to Temp tower.
+// // Step 2: Move 1 disc from Beg to End tower (in the case of 3 discs, this is the bottom disc)
+// // Step 3: Move top (N-1) discs from Temp to End tower (in the case of 3 disks, this is the top 2 discs)
+// function solve(begin, end, temp, n) {
+//     // Moving one disc is the base case
+//     if (n === 1) {
+//         end.push(begin.pop());
+//     // Moving more than one disc is the recursive case
+//     } else {
+//         solve(begin, temp, end, n-1);
+//         solve(begin, end, temp, 1);
+//         solve(temp, end, begin, n-1);
+//     }
+// }
+// solve(tower_A, tower_C, tower_B, numDiscs);
+// console.log('tower_A: ', tower_A);
+// console.log('tower_B: ', tower_B);
+// console.log('tower_C: ', tower_C);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // // Algorithm
 // // Instantiate a variable for the number of discs
 // // This input is where we could later adjust # of discs from user input

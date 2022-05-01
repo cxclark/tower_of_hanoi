@@ -7,10 +7,7 @@
     <title>Tower of Hanoi</title>
     <script defer src="./script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href = "https://fonts.googleapis.com/css2?family=Gothic+A1">
     <link rel="stylesheet" href = "https://fonts.googleapis.com/css2?family=DM+Sans">
-    <link rel="stylesheet" href = "https://fonts.googleapis.com/css2?family=Gothic+A1">
-
 </head>
 <main>
 
@@ -27,9 +24,9 @@
       
       <!-- The game game will have three towers -->
       <div class ="towers">
-        <div id="towerA" class="tower"><span></span></div>
-        <div id="towerB" class="tower"><span></span></div>
-        <div id="towerC" class="tower"><span></span></div>
+        <div id="towerA" class="tower"></div>
+        <div id="towerB" class="tower"></div>
+        <div id="towerC" class="tower"></div>
       </div>  
       
       <!-- Reset button resets the game -->
@@ -38,8 +35,12 @@
       </div>
     </div>
 
+    <div>
+      <button class="solve">Solve</button>
+    </div>
+    
     <div class="difficulty">
-      <p>Number of Discs:
+      <p>NUMBER OF DISCS:
         <select id="dropdown" onchange="newGame()">
             <option value="3"selected>3</option>
             <!-- Set the deafult dropdown value to 4 -->
