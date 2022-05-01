@@ -12,46 +12,48 @@
     <link rel="stylesheet" href = "https://fonts.googleapis.com/css2?family=Gothic+A1">
 
 </head>
-<header>
-  <div class="name"><h1>Tower of Hanoi</h1></div> 
-</header>
-<body>
-  <div class="board">
-    <!-- This is the message that will be populated at the top of the game  -->
-    <div id="message"></div>
-    <!-- Set display = none in CSS, to make invisible. Then onclick, set display to inline. So if move can't be done, set display to inline -->
-    
-    <!-- The game game will have three towers -->
-    <div class ="towers">
-      <div id="towerA" class="tower"></div>
-      <div id="towerB" class="tower"></div>
-      <div id="towerC" class="tower"></div>
-    </div>  
-    
-    <!-- Reset button resets the game -->
-    <div class='reset-section'>
-      <button class="reset-button">RESET</button>
+<main>
+
+  <div class="name"><h1>Tower of <span>Hanoi</span></h1></div> 
+
+  <body>
+    <div class="board">
+      <!-- This is the message that will be populated at the top of the game  -->
+      <div id="message"></div>
+      <!-- Set display = none in CSS, to make invisible. Then onclick, set display to inline. So if move can't be done, set display to inline -->
+      
+      <!-- The game game will have three towers -->
+      <div class ="towers">
+        <div id="towerA" class="tower"></div>
+        <div id="towerB" class="tower"></div>
+        <div id="towerC" class="tower"></div>
+      </div>  
+      
+      <!-- Reset button resets the game -->
+      <div class='reset-section'>
+        <button class="reset-button">RESET</button>
+      </div>
     </div>
-  </div>
 
-  <div class="difficulty">
-    <p>Difficulty:
-      <select id="dropdown" onchange="newGame()">
-          <option value="3"selected>3</option>
-          <!-- Set the deafult dropdown value to 4 -->
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-      </select>
-    </p>
-    <div class="minimum"></div>
-  </div>
-  
+    <div class="difficulty">
+      <p>Number of Discs:
+        <select id="dropdown" onchange="newGame()">
+            <option value="3"selected>3</option>
+            <!-- Set the deafult dropdown value to 4 -->
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+      </p>
+    </div
+    ><div class="minimum"></div>
+   
 
+  </body>
 
-</body>
+</main>
 
 </html>
 
