@@ -7,7 +7,17 @@
 html {
     background-color: #ece7d4;
 }
-.name {
+.header {
+    display: flex;
+    justify-content: center;
+}
+.subheader {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0vh 15vw; 
+}
+.center {
     display: flex;
     justify-content: center;
 }
@@ -15,20 +25,19 @@ span {
     color: #ff3d4d;
 }
 body {
-    width: 600px;
+    width: 90vw;
+    height: 100vh;
     /* font-family: "Gothic A1"; */
     font-family: "DM Sans";
     border: 2px solid red;
 }
 div {
-    padding: 20px;
+    padding: 10px;
     border: 2px solid gray;
 }
 .towers {
     display: flex;
     justify-content: space-around;
-    width: 500px;
-    height: 300px;
     border: 2px solid blue;
 }
 .tower {
@@ -36,11 +45,10 @@ div {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    /* margin: 0px 10px 0px 30px; */
-    min-width: 10vw; 
-    min-height: 10vh;
+    width: 90px; 
+    min-height: 35vh;
     /* border: 2px solid orange; */
-    border-bottom: 5px solid brown; #A52A2A is the bottom current color, a.k.a. solid brown ???????????????????
+    border-bottom: 6px solid brown; /* #A52A2A is the bottom current color, a.k.a. solid brown*/
     padding-bottom: 0px;
     border-radius: 2px;
     border-bottom-left-radius: 10px;
@@ -53,6 +61,7 @@ div {
 #message {
     display: flex;
     justify-content: center;
+    height: 2vh;
 }
 .reset-section {
     display: flex;
@@ -69,12 +78,14 @@ div {
     color: #ece7d4;
 }
 select {
-    background: red;
+    background-color: #ece7d4;
     border-radius: 5px;
+    font-family: "DM Sans";
 }
 .difficulty {
     display: flex;
     justify-content: center;
+    padding-bottom: 0px;
 }
 .minimum {
     display: flex;
@@ -104,23 +115,26 @@ select {
 }
 #disc4 {
     width: 40px;
-    background-color: #AEC6CF;
+    background-color: #cfe5d8;
 }
 #disc5 {
     width: 50px;
-    background-color: #C79098;
+    background-color: #62aca9;
 }
 #disc6 {
     width: 60px;
-    background-color: #C79098;
+    background-color: #ff7c64;
 }
 #disc7 {
     width: 70px;
-    background-color: #C79098;
+    background-color: #acd9e8;
 }
 #disc8 {
     width: 80px;
-    background-color: #C79098;
+    background-color: #cac2c0;
+    /* #edd7df;  */
+    /* #7c8dbf; */
+    /* background-color: #C79098;cfe5d8 */
 }
 
 

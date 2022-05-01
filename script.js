@@ -1,4 +1,10 @@
 
+// Create a function to display a message
+let subheader = 'Move all the discs from left to right one at a time. A disc cannot be placed on top of a smaller disc. Good luck!'
+document.querySelector('.subheader').innerHTML = subheader.toUpperCase();
+
+
+
 // Instantiate the three towers by grabbing the corresponding IDs in the DOM
 // const towers = document.querySelector('.towers')
 const towerA = document.querySelector('#towerA');
@@ -24,7 +30,8 @@ function createDiscs() {
         discDiv.classList.add('disc');
         towerA.appendChild(discDiv);
         console.log(`discDiv${i}'s offsetWidth:${discDiv.offsetWidth}`);
-        displayMessage('Move all the discs from left to right one at a time. A disc cannot be placed on top of a smaller disc. Good luck!');
+        displayMessage('');
+        // displayMessage('Move all the discs from left to right one at a time. A disc cannot be placed on top of a smaller disc. Good luck!');
     }
 }
 createDiscs();
