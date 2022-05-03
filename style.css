@@ -46,7 +46,7 @@ div {
     align-items: center;
     justify-content: flex-end;
     width: 90px; 
-    min-height: 35vh;
+    min-height: 25vh;
     border-bottom: 5px #8b4513; /*  8b4513 #A52A2A is the bottom current color, a.k.a. solid brown*/
     border-bottom-style: solid;
     padding-bottom: 0px;
