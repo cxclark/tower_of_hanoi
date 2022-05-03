@@ -6,3 +6,12 @@
 * JavaScript
 * HTML
 * CSS
+
+### Installation Instructions
+* None to speak of
+
+### User Stories
+
+### Wireframes
+
+### Unsolved Problems / Major Hurdles
