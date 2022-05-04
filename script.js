@@ -134,31 +134,43 @@ document.querySelector('.solve').addEventListener('click', () => {
     // Clear the existing discs from teh board
     document.querySelectorAll('.disc').forEach(disc => disc.remove());
     moveCount = 0;
-    // Call the solve function to solve the puzzle 
-    console.log(towerA.firstElementChild); // This is null, how do I pull out the disc value without a click?
-    console.log(towerB);
-    console.log(towerC);
-    console.log(numDiscs);
-    test(towerA, towerB);
-    // solve(towerA, towerC, towerB, numDiscs);
+    newGame();
+    // Call the solve function to solve the puzzle
+    // Will need to insert time delay after base case, maybe 0.5 seconds
+    // setTimeout...
+
+    // test(towerA, towerB);
+    // console.log('towerA.firstElementChild: ', towerA.firstElementChild)
+    // console.log('towerB.firstElementChild: ', towerB.firstElementChild);
+
+    solve(towerA, towerC, towerB, numDiscs);
 })
 
-// function solve(begin, end, temp, n) {
-//     createDiscs();
-//     if (n === 1) {
-//         discToMove = begin.firstElementChild;
-//         end.prepend.discToMove;
-//     } else {
-//         solve(begin, temp, end, n-1);
-//         solve(begin, end, temp, 1);
-//         solve(temp, end, begin, n-1);
-//     }
-// }
+function solve(begin, end, temp, n) {
+    if (n === 1) {
+        discToMove = begin.firstElementChild;
+    
+        console.log(discToMove);
+    
+        // setTimeout(() => console.log(discToMove, 'delayed for 1 second'), 1000);
 
-function test(begin, end) {
-    discToMove = begin.firstElementChild;
-    end.prepend.discToMove;
+        // end.prepend(discToMove);
+
+        setTimeout(() => end.prepend(discToMove), 1000);
+        // console.log('this code runs after the setTimeout');
+
+    } else {
+        solve(begin, temp, end, n-1);
+        solve(begin, end, temp, 1);
+        solve(temp, end, begin, n-1);
+    }
 }
+
+// function test(begin, end) {
+//     discToMove = begin.firstElementChild;
+//     console.log('discToMove: ', discToMove);
+//     end.prepend(discToMove);
+// }
 
 
 // // Algorithm
@@ -233,11 +245,11 @@ function test(begin, end) {
 // console.log('tower_A: ', tower_A);
 // console.log('tower_B: ', tower_B);
 // console.log('tower_C: ', tower_C);
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-// // Algorithm
-// // Instantiate a variable for the number of discs
-// // This input is where we could later adjust # of discs from user input
-// let numDiscs = 3;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Algorithm
+// Instantiate a variable for the number of discs
+// This input is where we could later adjust # of discs from user input
+// numDiscs = 5;
 // // Instantiate three towers as stacks
 // let tower_A = []
 // let tower_B = []
@@ -269,5 +281,5 @@ function test(begin, end) {
 // console.log('tower_A: ', tower_A);
 // console.log('tower_B: ', tower_B);
 // console.log('tower_C: ', tower_C);
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
