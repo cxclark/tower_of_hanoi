@@ -1,6 +1,7 @@
 ## Tower of Hanoi
 
 ### Screenshots
+![1_open](./assets/1_open.png)
 
 ### Technologies used
 * JavaScript
