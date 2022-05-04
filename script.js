@@ -146,37 +146,56 @@ document.querySelector('.solve').addEventListener('click', () => {
     solve(towerA, towerC, towerB, numDiscs);
 })
 
+
 function solve(begin, end, temp, n) {
+    // setTimeout(() => console.log('pause'), 1000);
     if (n === 1) {
-        discToMove = begin.firstElementChild;
-    
-        console.log(discToMove);
-    
-        // setTimeout(() => console.log(discToMove, 'delayed for 1 second'), 1000);
+        setTimeout(() => {
+            discToMove = begin.firstElementChild;
+        }, 3000);
+        setTimeout(() => {
+            console.log('discToMove: ', discToMove);
+        }, 3000);
+        setTimeout(() => {
+            end.prepend(discToMove);
+        }, 3000);
 
-        // end.prepend(discToMove);
-
-        setTimeout(() => end.prepend(discToMove), 1000);
-        // console.log('this code runs after the setTimeout');
-
+            // setTimeout(() => end.prepend(discToMove), 1000);
+            // console.log('this code runs after the setTimeout');
+            
     } else {
+        // The below solves it in the correct order
         solve(begin, temp, end, n-1);
         solve(begin, end, temp, 1);
         solve(temp, end, begin, n-1);
+        
+        // // The below solves it in the wrong order
+        // setTimeout(() => {
+        //     solve(begin, temp, end, n-1);
+        // }, 1000);
+        // setTimeout(() => {    
+        //     solve(begin, end, temp, 1);
+        // }, 1000);
+        // setTimeout(() => {    
+        //     solve(temp, end, begin, n-1);
+        // }, 1000);
+
+        // // The below solves it in the wrong order
+        // setTimeout(() => {
+        //     solve(begin, temp, end, n-1);
+        //     solve(begin, end, temp, 1);
+        //     solve(temp, end, begin, n-1);
+        // }, 1000);
     }
 }
 
-// function test(begin, end) {
-//     discToMove = begin.firstElementChild;
-//     console.log('discToMove: ', discToMove);
-//     end.prepend(discToMove);
-// }
+
 
 
 // // Algorithm
 // // Instantiate a variable for the number of discs
 // // This input is where we could later adjust # of discs from user input
-// let numDiscs = 3;
+// numDiscs = 3;
 // // Instantiate three towers as stacks
 // let tower_A = []
 // let tower_B = []
@@ -187,15 +206,19 @@ function solve(begin, end, temp, n) {
 // console.log('tower_A: ', tower_A);
 // console.log('tower_B: ', tower_B);
 // console.log('tower_C: ', tower_C);
-// Solve Hanoi
-// Moving one case is the base case
-// Moving more than one case is the recursive case 
-// Step 1: Move top (N-1) discs from Beg to Temp tower.
-// Step 2: Move 1 disc from Beg to End tower (in the case of 3 discs, this is the bottom disc)
-// Step 3: Move top (N-1) discs from Temp to End tower (in the case of 3 disks, this is the top 2 discs)
+// // Solve Hanoi
+// // Moving one case is the base case
+// // Moving more than one case is the recursive case 
+// // Step 1: Move top (N-1) discs from Beg to Temp tower.
+// // Step 2: Move 1 disc from Beg to End tower (in the case of 3 discs, this is the bottom disc)
+// // Step 3: Move top (N-1) discs from Temp to End tower (in the case of 3 disks, this is the top 2 discs)
 // function solve(begin, end, temp, n) {
 //     // Moving one disc is the base case
 //     if (n === 1) {
+//         console.log(`${begin[begin.length-1]} -> ${end[end.length-1]}`)
+//         console.log('TowerA: ', tower_A)
+//         console.log('TowerB: ', tower_B)
+//         console.log('TowerC: ', tower_C)
 //         end.push(begin.pop());
 //     // Moving more than one disc is the recursive case
 //     } else {
@@ -208,7 +231,7 @@ function solve(begin, end, temp, n) {
 // console.log('tower_A: ', tower_A);
 // console.log('tower_B: ', tower_B);
 // console.log('tower_C: ', tower_C);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // // Algorithm
 // // Instantiate a variable for the number of discs
