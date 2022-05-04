@@ -2,6 +2,7 @@
 
 ### Screenshots
 ![1_open](./assets/1_open.png)
+<img src= "./assets/1_open.png" width="350">
 
 ### Technologies used
 * JavaScript
