@@ -96,6 +96,10 @@ select {
 .minimum {
     display: flex;
     justify-content: center;
+    padding-top: 0px;
+}
+#solution {
+    padding-top: 100px;
 }
 .disc {
     height: 5px;
