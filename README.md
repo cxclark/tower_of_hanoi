@@ -10,7 +10,7 @@ In my app, users can play Tower of Hanoi, reset the game, and select anywhere be
 ### Screenshots
 ![1_open](./assets/1_open.png)
 ![2_selected](./assets/2_selected.png)
-![3_move](./assets/3_move2.png)
+![3_move](./assets/3_move.png)
 ![4_invalid_move](./assets/4_invalid_move.png)
 ![5_win](./assets/5_win.png)
 
@@ -33,8 +33,8 @@ Follow [this link](https://google.com) to play the game in your browser.
 
 ### Wireframes
 ![hanoi1](./assets/wireframes/hanoi1.png)
-![hanoi2](.assets/wirefreames/hanoi2.png)
-![hanoi3](.assets/wireframes/hanoi3.png)
+![hanoi2](./assets/wirefreames/hanoi2.png)
+![hanoi3](./assets/wireframes/hanoi3.png)
 ![hanoi4](./assets/wireframes/hanoi4.png)
 
 ### Unsolved Problems / Major Hurdles
