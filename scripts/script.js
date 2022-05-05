@@ -1,6 +1,7 @@
 // Format Solve Button & make it look pretty
 // Clean up code comments
 // Finish README
+// Reset events array so it doesn't keep all the moves (when you click reset and play multiple times)
 
 
 
