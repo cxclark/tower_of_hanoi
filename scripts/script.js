@@ -1,3 +1,10 @@
+// Format Solve Button & make it look pretty
+// Clean up code comments
+// Finish README
+
+
+
+
 
 // Instantiate a variable to hold instructions message
 let subheader = 'Move all the discs from left to right one at a time. A disc cannot be placed on top of a smaller disc.'
@@ -124,59 +131,64 @@ function minMoves() {
     minMoves.innerHTML = `${2**numDiscs - 1} moves to win`.toUpperCase();
 }
 
-// 4/30: Finalize logic for the game
-// 5/1: Fine-tune the styling (spacing, colors, font, centering, input)
-// 5/3: Complete the self-solve functionality
 
-////////////////////////////////////////////////////////////////////////////////////////////
+// SOLVE LOGIC
 // Create an event listener for the solve button that solves the game
 document.querySelector('.solve').addEventListener('click', () => {
     // Clear the existing discs from teh board
     document.querySelectorAll('.disc').forEach(disc => disc.remove());
+    // Reset the move count
     moveCount = 0;
+    // Reset the game so it can solve from the beginning
     newGame();
-    // Call the solve function to solve the puzzle
-    // Will need to insert time delay after base case, maybe 0.5 seconds
-    // setTimeout...
-
-    // test(towerA, towerB);
-    // console.log('towerA.firstElementChild: ', towerA.firstElementChild)
-    // console.log('towerB.firstElementChild: ', towerB.firstElementChild);
-
-    solve(towerA, towerC, towerB, numDiscs);
+    returnSolvedArr(towerA, towerC, towerB, numDiscs);
+    newGame();
+    let interval = 500;
+    events.forEach(arr => {
+        // arr has format [discToMove, end]
+        moveDisc(arr[0], arr[1], interval)
+        interval += 500
+    })
 })
 
+// Define a function to move discs to be used in self-solve
+// Remove the disc from it's first location, and prepend it to it's target
+function moveDisc(discToMove, end, interval) {
+    // Add a delay
+    setTimeout(() => {
+        // Re-query the DOM, grab the disc by its ID to remove it
+        document.getElementById(discToMove.id).remove();
+        // Add the DOM element to the target tower
+        end.prepend(discToMove);
+    }, interval);
+}
 
-function solve(begin, end, temp, n) {
-    // setTimeout(() => console.log('pause'), 1000);
-    // if (n === 1) {
-    //     setTimeout(() => {
-    //         discToMove = begin.firstElementChild;
-    //     }, 1000);
-    //     setTimeout(() => {
-    //         console.log('discToMove: ', discToMove);
-    //     }, 1000);
-    //     setTimeout(() => {
-    //         end.prepend(discToMove);
-    //     }, 1000);
+let events = [];
 
+// Define a solve function that returns an array of arrays containing moves to win the game 
+// Each move has the format [discToMove, end]
+function returnSolvedArr(begin, end, temp, n) {
+    
     if (n === 1) {
-        // setTimeout(() => {
         discToMove = begin.firstElementChild;
-        // }, 1000);
-        // setTimeout(() => {
         console.log('discToMove: ', discToMove);
-        // }, 1000);
-        // setTimeout(() => {
-            end.prepend(discToMove);
-        // }, 1000);   // setTimeout(() => end.prepend(discToMove), 1000);
-            // console.log('this code runs after the setTimeout');
-            
+        end.prepend(discToMove);
+        events.push([discToMove, end])
+        // I need to solve it both in the DOM
+        // The moment I need to delay is the visual prepend
+        // When you introduce setTimeout, that applies to the DOM element but not the function
+        // Change solve function to be an array to track the events that happen
+        // Solve populates the array with DOM events
+        // May need to save the tower
+        // May not need tower e.g. 'move 1 to tower C', 'move disc 2 to tower 2'
+        // Recursive function is outpacing the DOM movements with setTimeout()
+        // forEach with setTimeout to move them
+
     } else {
         // The below solves it in the correct order
-        solve(begin, temp, end, n-1);
-        solve(begin, end, temp, 1);
-        solve(temp, end, begin, n-1);
+        returnSolvedArr(begin, temp, end, n-1);
+        returnSolvedArr(begin, end, temp, 1);
+        returnSolvedArr(temp, end, begin, n-1);
         
         // // The below solves it in the wrong order
         // setTimeout(() => {
