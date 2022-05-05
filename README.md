@@ -5,6 +5,8 @@ Tower of Hanoi is a mathematical puzzle game consisting of three towers and a nu
 2. Every move involves taking the top disc from one of the towers and placing it on top of another tower
 3. No disc can be put on top of a smaller disc
 
+In my app, users can play Tower of Hanoi, reset the game, and select anywhere between 3 and 8 discs with which to play. Once you select a number of discs from the dropdown, the screen will display the minimum number of moves needed to win.
+
 ### Screenshots
 ![1_open](./assets/1_open.png)
 ![2_selected](./assets/2_selected.png)
