@@ -33,7 +33,7 @@ Follow [this link](https://google.com) to play the game in your browser.
 
 ### Wireframes
 ![hanoi1](./assets/wireframes/hanoi1.png)
-![hanoi2](./assets/wirefreames/hanoi2.png)
+![hanoi2](./assets/wireframes/hanoi2.png)
 ![hanoi3](./assets/wireframes/hanoi3.png)
 ![hanoi4](./assets/wireframes/hanoi4.png)
 
