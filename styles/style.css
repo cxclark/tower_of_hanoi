@@ -105,6 +105,7 @@ select {
     height: 5px;
     border-style: solid;
     border-color:#475f77;
+    border-width: 3px;
     border-radius: 20px;
     padding: 8px;
     display: flex;
