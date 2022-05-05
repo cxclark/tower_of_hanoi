@@ -149,18 +149,27 @@ document.querySelector('.solve').addEventListener('click', () => {
 
 function solve(begin, end, temp, n) {
     // setTimeout(() => console.log('pause'), 1000);
-    if (n === 1) {
-        setTimeout(() => {
-            discToMove = begin.firstElementChild;
-        }, 3000);
-        setTimeout(() => {
-            console.log('discToMove: ', discToMove);
-        }, 3000);
-        setTimeout(() => {
-            end.prepend(discToMove);
-        }, 3000);
+    // if (n === 1) {
+    //     setTimeout(() => {
+    //         discToMove = begin.firstElementChild;
+    //     }, 1000);
+    //     setTimeout(() => {
+    //         console.log('discToMove: ', discToMove);
+    //     }, 1000);
+    //     setTimeout(() => {
+    //         end.prepend(discToMove);
+    //     }, 1000);
 
-            // setTimeout(() => end.prepend(discToMove), 1000);
+    if (n === 1) {
+        // setTimeout(() => {
+        discToMove = begin.firstElementChild;
+        // }, 1000);
+        // setTimeout(() => {
+        console.log('discToMove: ', discToMove);
+        // }, 1000);
+        // setTimeout(() => {
+            end.prepend(discToMove);
+        // }, 1000);   // setTimeout(() => end.prepend(discToMove), 1000);
             // console.log('this code runs after the setTimeout');
             
     } else {
@@ -180,7 +189,7 @@ function solve(begin, end, temp, n) {
         //     solve(temp, end, begin, n-1);
         // }, 1000);
 
-        // // The below solves it in the wrong order
+        // The below solves it in the wrong order
         // setTimeout(() => {
         //     solve(begin, temp, end, n-1);
         //     solve(begin, end, temp, 1);
