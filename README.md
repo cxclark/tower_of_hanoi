@@ -8,13 +8,13 @@
 ![4_invalid_move](./assets/4_invalid_move.png)
 ![5_win](./assets/5_win.png)
 
-### Technologies used
+### Technologies
 * JavaScript
 * HTML
 * CSS
 
 ### Installation Instructions
-* Follow [this link](https://google.com) to play the game in your browser.
+Follow [this link](https://google.com) to play the game in your browser.
 
 ### User Stories
 
