@@ -17,25 +17,29 @@
   <!-- This is the message that will be populated at the top of the game  -->
   <div id="message"></div>
   <body>
-    <div class="board">
-      
-      
-      <!-- Set display = none in CSS, to make invisible. Then onclick, set display to inline. So if move can't be done, set display to inline -->
-      
-      <!-- The game game will have three towers -->
-      <div class ="towers">
-        <div id="towerA" class="tower"></div>
-        <div id="towerB" class="tower"></div>
-        <div id="towerC" class="tower"></div>
-      </div>  
-      
+
+    <!-- The game game will have three towers -->
+    <div class ="towers">
+      <div id="towerA" class="tower"></div>
+      <div id="towerB" class="tower"></div>
+      <div id="towerC" class="tower"></div>
+    </div>  
+    
+    <!-- This is the buttons section -->
+    <div class="buttons">
+
       <!-- Reset button resets the game -->
-      <div class='reset-section'>
+      <div class="reset-section">
         <button class="reset-button">RESET</button>
       </div>
+
+      <!-- Solve button solves the game -->
+      <div class="solve-section">
+        <button class="solve-button">SOLVE</button>
+      </div>
+
     </div>
 
-    
     <div class="difficulty">
       <p>NUMBER OF DISCS:
         <select id="dropdown" onchange="newGame()">
@@ -51,9 +55,6 @@
     </div
     ><div class="minimum"></div>
     
-    <div id="solution">
-      <button class="solve">Solve</button>
-    </div>
 
   </body>
 

@@ -135,7 +135,7 @@ function minMoves() {
 
 // SOLVE LOGIC
 // Create an event listener for the solve button that solves the game
-document.querySelector('.solve').addEventListener('click', () => {
+document.querySelector('.solve-button').addEventListener('click', () => {
     // Clear the existing discs from teh board
     document.querySelectorAll('.disc').forEach(disc => disc.remove());
     // Reset the move count
@@ -144,11 +144,11 @@ document.querySelector('.solve').addEventListener('click', () => {
     newGame();
     returnSolvedArr(towerA, towerC, towerB, numDiscs);
     newGame();
-    let interval = 500;
+    let interval = 750;
     events.forEach(arr => {
         // arr has format [discToMove, end]
         moveDisc(arr[0], arr[1], interval)
-        interval += 500
+        interval += 750
     })
 })
 

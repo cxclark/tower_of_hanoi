@@ -30,7 +30,6 @@ body {
     width: 90vw;
     height: 100vh;
     font-family: "DM Sans";
-    /* border: 2px solid red; */
 }
 div {
     padding: 10px;
@@ -46,7 +45,8 @@ div {
     align-items: center;
     justify-content: flex-end;
     width: 90px; 
-    min-height: 25vh;
+    min-height: 220px;
+    /* max-height: 40vh; */
     border-bottom: 5px #8b4513; /*  8b4513 #A52A2A is the bottom current color, a.k.a. solid brown*/
     border-bottom-style: solid;
     padding-bottom: 0px;
@@ -63,14 +63,25 @@ div {
     justify-content: center;
     height: 2vh;
     padding-bottom: 30px;
-
 }
-.reset-section {
+.buttons {
     display: flex;
     justify-content: center;
-    padding-top: 40px;
     padding-bottom: 0px;
+    /* border: 3px solid blue; */
 }
+.reset-section {
+    /* display: flex;
+    justify-content: center; */
+    /* padding-top: 40px; */
+    padding-bottom: 0px;
+} 
+.solve-section {
+    /* display: flex;
+    justify-content: center; */
+    /* padding-top: 40px; */
+    padding-bottom: 0px;
+} 
 .reset-button {
     text-align: center;
     margin: 5px auto;
@@ -79,6 +90,16 @@ div {
     font-family: "DM Sans";
     font-size: medium;
     background-color: #ff3d4d;
+    color: #ece7d4;
+}
+.solve-button {
+    text-align: center;
+    margin: 5px auto;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    font-family: "DM Sans";
+    font-size: medium;
+    background-color: #659952;
     color: #ece7d4;
 }
 select {
