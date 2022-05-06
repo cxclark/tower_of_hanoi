@@ -28,6 +28,7 @@ function solve(begin, end, temp, n) {
         console.log('tower_C: ', tower_C)
         end.push(begin.pop());
         counter += 1
+        // Console.log() the step number
         console.log(`Step ${counter}`)
 
     // Moving more than one disc is the recursive case
@@ -37,6 +38,7 @@ function solve(begin, end, temp, n) {
         solve(temp, end, begin, n-1);
     }
 }
+
 solve(tower_A, tower_C, tower_B, numDiscs);
 console.log('tower_A: ', tower_A);
 console.log('tower_B: ', tower_B);
