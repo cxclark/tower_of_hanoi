@@ -42,3 +42,4 @@ The 'Solve' button functionality was a notable hurdle in developing this app. Th
 
 ### Known Issues
 * When you click 'Reset' and 'Solve' multiple times in succession without refreshing the page, bugs are introduced. I need to update the logic of the way the solve array is populated and cleared.
+* If you click 'Solve' and click 'Reset' without letting the game finish its solve, bugs are introduced. The 'Reset' button should interrupt the 'Solve' and reset the game.
