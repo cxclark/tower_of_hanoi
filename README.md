@@ -14,12 +14,6 @@ In my app, users can play Tower of Hanoi, reset the game, and select anywhere be
 ![4_invalid_move](./assets/4_invalid_move.png)
 ![5_win](./assets/5_win.png)
 
-![1_open](./assets/1_open.png)
-![2_selected](./assets/2_selected.png)
-![3_move](./assets/3_move.png)
-![4_invalid_move](./assets/4_invalid_move.png)
-![5_win](./assets/5_win.png)
-
 ### Technologies
 * JavaScript
 * HTML
