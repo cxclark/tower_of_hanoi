@@ -104,7 +104,7 @@ document.querySelector('.reset-button').addEventListener('click', () => {
 // Create a function that resets the game
 function newGame() {
     document.querySelectorAll('.disc').forEach(disc => disc.remove());
-    createDiscs()
+    createDiscs();
     minMoves();
     moveCount = 0;
 }
@@ -123,7 +123,6 @@ function minMoves() {
     minMoves.innerHTML = `${2**numDiscs - 1} moves to win`.toUpperCase();
 }
 
-
 // SOLVE LOGIC
 // Create an event listener for the solve button that solves the game
 document.querySelector('.solve-button').addEventListener('click', () => {
@@ -140,10 +139,10 @@ document.querySelector('.solve-button').addEventListener('click', () => {
     let interval = 500;
     events.forEach(arr => {
         // arr has format [discToMove, end]
-        moveDisc(arr[0], arr[1], interval)
-        interval += 500
+        moveDisc(arr[0], arr[1], interval);
+        interval += 500;
     })
-    displayMessage(`Nothing wrong with getting a little help :)`.toUpperCase())
+    displayMessage(`Nothing wrong with getting a little help :)`);
 })
 
 // Define a function to move discs to be used in self-solve
@@ -161,13 +160,13 @@ function moveDisc(discToMove, end, interval) {
 // Define a solve function that returns an array of arrays containing moves to win the game 
 // Each move has the format [discToMove, end]
 function returnSolvedArr(begin, end, temp, n) {
-    // Moving one case is the base case
+    // Moving one disc is the base case
     if (n === 1) {
         discToMove = begin.firstElementChild;
         end.prepend(discToMove);
-        events.push([discToMove, end])
+        events.push([discToMove, end]);
     } else {
-        // Moving more than one case is the recursive case 
+        // Moving more than one disc is the recursive case 
         // Step 1: Move top (N-1) discs from Beg to Temp tower.
         // Step 2: Move 1 disc from Beg to End tower (in the case of 3 discs, this is the bottom disc)
         // Step 3: Move top (N-1) discs from Temp to End tower (in the case of 3 discs, this is the top 2 discs)   
