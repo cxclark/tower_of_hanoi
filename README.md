@@ -13,6 +13,7 @@ In my app, users can play Tower of Hanoi, reset the game, and select anywhere be
 ![3_move](./assets/3_move.png)
 ![4_invalid_move](./assets/4_invalid_move.png)
 ![5_win](./assets/5_win.png)
+![6_solve](./assets/6_solve.png)
 
 ### Technologies
 * JavaScript
@@ -41,5 +42,4 @@ Follow [this link](https://google.com) to play the game in your browser.
 The 'Solve' button functionality was a notable hurdle in developing this app. The recursive algorithm to solve it came pretty quickly, but the task of slowing down each disc movement as the app solved the game was very challenging. When I initially tried to apply `setTimeout()` to the base case in the recursion, the app solved the game out of order, or returned null nodes in some instances. It turned out that while the algorithm was runnign properly in the background and I was using similar logic as in my main game flow to update the DOM elements, the DOM was not in sync with the algorithm's steps. The solution was to save the winning steps in an array of arrays using the format `[discToMove, end]`. I then iterated through the array using `setTimeout()` and a time delay so the user could view the steps.
 
 ### Known Issues
-* When you click 'Reset' and 'Solve' multiple times in succession without refreshing the page, bugs are introduced. I need to update the logic of the way the solve array is populated and cleared.
 * If you click 'Solve' and click 'Reset' without letting the game finish its solve, bugs are introduced. The 'Reset' button should interrupt the 'Solve' and reset the game.
