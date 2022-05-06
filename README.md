@@ -21,7 +21,7 @@ In my app, users can play Tower of Hanoi, reset the game, and select anywhere be
 * CSS
 
 ### Installation Instructions
-Follow [this link](https://google.com) to play the game in your browser.
+Follow [this link](https://cxclark.github.io/tower_of_hanoi/) to play the game in your browser.
 
 ### User Stories
 - As a player, I want to be able to select discs and move them around so I can play the game.
