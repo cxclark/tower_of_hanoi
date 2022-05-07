@@ -18,7 +18,7 @@ let events = [];
 // Create discs using DOM elements
 function createDiscs() {
     let dropdown = document.getElementById('dropdown');
-    numDiscs = parseInt(dropdown.options[dropdown.selectedIndex].value); // Do I need this second call-out???
+    numDiscs = parseInt(dropdown.options[dropdown.selectedIndex].value);
     for (let i = 1; i < numDiscs + 1; i++) {
         let discDiv = document.createElement('div');
         discDiv.id = 'disc' + i;
